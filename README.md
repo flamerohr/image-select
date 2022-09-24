@@ -6,3 +6,11 @@ To get started, run:
   npm install
   npm run start
 ```
+
+## Outline of project
+
+Technologies used for project:
+
+- Create React App
+- Redux Toolkit with RTKQuery
+- CSS modules for styles

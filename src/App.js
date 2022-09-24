@@ -1,10 +1,7 @@
+import withStore from "./features/store";
 
 const App = () => {
-  return (
-    <div>
-      Barebones app
-    </div>
-  );
-}
+  return <div>Barebones app</div>;
+};
 
-export default App;
+export default withStore(App);
