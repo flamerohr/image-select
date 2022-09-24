@@ -5,8 +5,13 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     images: builder.query({
       query: () => "/images",
+      transformResponse: ({ data }) => data,
+    }),
+    imageFaces: builder.query({
+      query: (imageId) => `/images/${imageId}/faces`,
+      transformResponse: ({ data }) => data,
     }),
   }),
 });
 
-export const { useImagesQuery } = apiSlice;
+export const { useImagesQuery, useImageFacesQuery } = apiSlice;
