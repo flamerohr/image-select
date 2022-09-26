@@ -11,3 +11,5 @@ export const Gallery = ({ className, ...props }) => {
     Active: {active}
   </div>;
 };
+
+export default Gallery;

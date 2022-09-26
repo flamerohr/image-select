@@ -1,4 +1,4 @@
-import { Gallery } from "features/gallery/Gallery";
+import { Gallery } from "features/gallery";
 import withStore from "features/store";
 
 import s from './app.module.scss';
