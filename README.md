@@ -38,3 +38,4 @@ I would keep interfaces and types in separate files like I have done with compon
 - There are missing "loading" UI I could add to when images/faces are loading.
 - Figma showed a right click menu, which would've been simple to implement if I put in a bit 
 more time.
+- Add a better mock setup for async testing
