@@ -6,18 +6,30 @@ import { getActive } from "./gallerySelectors";
 
 import s from "./gallery.module.scss";
 import { useMemo } from "react";
+import { Image } from "./components/Image";
+import Navbar from "./components/Navbar";
 
 export const Gallery = ({ className, ...props }) => {
   const { data: images, isLoading } = useImagesQuery();
   const active = useSelector(getActive);
 
-  const activeImage = useMemo(() => null, [images, active]);
+  const activeImage = useMemo(() => {
+    if (!active) {
+      return images[0];
+    }
+
+    const image = images.find(({ id }) => id === active);
+
+    return image;
+  }, [images, active]);
 
   return (
     <div {...props} className={classnames(className, s.container)}>
       {isLoading && <Loading />}
 
-      {activeImage && <img src={activeImage.url} alt={activeImage.filename} />}
+      {<Image {...activeImage} className={s.image} />}
+
+      {<Navbar images={images} activeImage={activeImage} className={s.navbar} />}
     </div>
   );
 };
