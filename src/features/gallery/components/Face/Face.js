@@ -15,9 +15,9 @@ export const Face = ({
   const styles = useMemo(
     () => ({
       top: `${Math.round(ymin * 10000) / 100}%`,
-      bottom: `${Math.round(ymax * 10000) / 100}%`,
+      height: `${Math.round((ymax - ymin) * 10000) / 100}%`,
       left: `${Math.round(xmin * 10000) / 100}%`,
-      right: `${Math.round(xmax * 10000) / 100}%`,
+      width: `${Math.round((xmax - xmin) * 10000) / 100}%`,
     }),
     [xmin, xmax, ymin, ymax]
   );
