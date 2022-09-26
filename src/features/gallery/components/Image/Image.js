@@ -38,7 +38,7 @@ export const Image = ({ filename, url, id, className, ...props }) => {
   }, []);
 
   if (!filename || !url) {
-    return "No image found";
+    return null;
   }
 
   return (
