@@ -18,12 +18,18 @@ export const Image = ({ filename, url, id, className, ...props }) => {
     });
     let mounted = true;
 
-    // TODO: harden this timeout later
-    setTimeout(() => {
-      if (mounted) {
-        observer.observe(imageRef.current);
-      }
-    }, 50);
+    const setupImage = () => {
+      setTimeout(() => {
+        if (mounted) {
+          if (!imageRef.current) {
+            setupImage();
+            return;
+          }
+          observer.observe(imageRef.current);
+        }
+      }, 50);
+    };
+    setupImage();
 
     return () => {
       observer.disconnect();

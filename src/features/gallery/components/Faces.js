@@ -11,7 +11,7 @@ export const Faces = ({ imageId }) => {
   return (
     <>
       {faces.map((face) => (
-        <Face {...face} />
+        <Face key={face.id} {...face} />
       ))}
     </>
   );

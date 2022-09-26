@@ -14,6 +14,9 @@ export const Gallery = ({ className, ...props }) => {
   const active = useSelector(getActive);
 
   const activeImage = useMemo(() => {
+    if (isLoading) {
+      return null;
+    }
     if (!active) {
       return images[0];
     }
@@ -21,7 +24,7 @@ export const Gallery = ({ className, ...props }) => {
     const image = images.find(({ id }) => id === active);
 
     return image;
-  }, [images, active]);
+  }, [images, active, isLoading]);
 
   return (
     <div {...props} className={classnames(className, s.container)}>
