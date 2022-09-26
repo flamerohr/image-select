@@ -27,7 +27,7 @@ export const Gallery = ({ className, ...props }) => {
     <div {...props} className={classnames(className, s.container)}>
       {isLoading && <Loading />}
 
-      {<Image {...activeImage} className={s.image} />}
+      {<Image {...activeImage} />}
 
       {<Navbar images={images} activeImage={activeImage} className={s.navbar} />}
     </div>
