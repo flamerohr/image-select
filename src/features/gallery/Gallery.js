@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import classnames from "classnames";
 import Loading from "components/Loading";
-import { useImagesQuery } from "features/apiSliceMock";
+import { useImagesQuery } from "features/apiSlice";
 import { getActive } from "./gallerySelectors";
 
 import s from "./gallery.module.scss";
@@ -29,7 +29,13 @@ export const Gallery = ({ className, ...props }) => {
 
       {<Image {...activeImage} />}
 
-      {<Navbar images={images} activeImage={activeImage} className={s.navbar} />}
+      {
+        <Navbar
+          images={images}
+          activeImage={activeImage}
+          className={s.navbar}
+        />
+      }
     </div>
   );
 };

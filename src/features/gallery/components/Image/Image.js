@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import classnames from 'classnames';
+import classnames from "classnames";
 import Faces from "../Faces";
 
 import s from "./image.module.scss";
@@ -44,7 +44,10 @@ export const Image = ({ filename, url, id, className, ...props }) => {
         src={url}
         alt={filename}
       />
-      <div className={classnames(s.container, className)} style={imageDimensions}>
+      <div
+        className={classnames(s.container, className)}
+        style={imageDimensions}
+      >
         <Faces imageId={id} />
       </div>
     </>

@@ -1,3 +1,3 @@
-export * from './App';
+export * from "./App";
 
-export { default } from './App';
+export { default } from "./App";

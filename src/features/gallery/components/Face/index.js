@@ -1,3 +1,3 @@
-export * from './Face';
+export * from "./Face";
 
-export { default } from './Face';
+export { default } from "./Face";

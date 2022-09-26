@@ -1,4 +1,4 @@
-import { useImageFacesQuery } from "features/apiSliceMock";
+import { useImageFacesQuery } from "features/apiSlice";
 import { Face } from "./Face";
 
 export const Faces = ({ imageId }) => {
