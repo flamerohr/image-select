@@ -1,0 +1,15 @@
+.face {
+  position: absolute;
+  display: block;
+  border: 2px solid #fff;
+  min-height: 5px;
+  min-width: 5px;
+
+  &.active {
+    border-color: #f00;
+  }
+
+  &:hover {
+    border-color: #f88;
+  }
+}
