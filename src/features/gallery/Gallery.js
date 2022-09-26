@@ -1,8 +1,13 @@
 import { useSelector } from "react-redux";
+import classnames from "classnames";
 import { getActive } from "./gallerySelectors";
 
-export const Gallery = () => {
+import s from './gallery.module.scss';
+
+export const Gallery = ({ className, ...props }) => {
   const active = useSelector(getActive);
 
-  return "gallery placeholder";
+  return <div {...props} className={classnames(className, s.container)}>
+    Active: {active}
+  </div>;
 };
